@@ -4,8 +4,13 @@ Simple tool for managing SOGO users in PostgreSQL database and local linux passw
 
 - allow bulk import via CSV file
 - by default only users with gid==700 (mailusers) and gid==10 (wheel) will be shown
-  (change group_filter in SOGOUserManager for yours mailusers gid)
 - don't forget to replace 'domain.tld' on your own mail domain
+- don't forget to change DB access credentials
+
+
+Before first run:
+  - change group_filter in SOGOUserManager for yours mailusers gid
+  - change database user sogo:sogo and DB name 'sogo' as required
 
 
 Permanent Beta
