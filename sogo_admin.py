@@ -3,13 +3,14 @@
 #
 # (C) MIT, 2021 ax15
 #
-__ver__='v1.21'
+__ver__='v1.22'
 
 #
 # v1.19 - small changes in main view: wider fields for CN and SOGO CN
 #       - added cleanup for sogouser0x0x0x0x00x tables when deleting user
 # v1.20 - behaviour of Ctrl+S changed for deleting user only from SOGO database
 # v1.21 - fixed user rename: changing name not only in SOGO but in system too
+# v1.22 - fix user password update
 #
 
 import npyscreen
@@ -503,7 +504,7 @@ class EditUser(npyscreen.ActionPopup):
                 logging.warning("SOGo update user %s in db", self.c_uid)
                 self.parentApp.myDatabase.update_user(self.c_uid,
                                                         c_name        = self.wgC_Name.value,
-                                                        c_password    = wgC_Passwd.value,
+                                                        c_password    = self.wgC_Passwd.value,
                                                         c_cn          = self.wgC_CN.value,
                                                         email_address = self.wgEmail.value )
 
